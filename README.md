@@ -4,106 +4,40 @@
 
 ## 项目结构
 
-- `2048-angular`: 使用Angular框架实现的版本
-- `2048-backbone`: 使用Backbone.js实现的版本
-- `2048-canvas`: 使用原生Canvas实现的版本
-- `2048-kotlin`: 使用Kotlin实现的版本
-- `2048-lit`: 使用Lit框架实现的版本
-- `2048-preact`: 使用Preact框架实现的版本
-- `2048-pyscript`: 使用PyScript实现的版本
-- `2048-qwik`: 使用Qwik框架实现的版本
-- `2048-react`: 使用React框架实现的版本
-- `2048-solid`: 使用Solid.js实现的版本
-- `2048-svelte`: 使用Svelte框架实现的版本
-- `2048-vanilla`: 使用原生JavaScript实现的版本
-- `2048-webgl`: 使用WebGL实现的版本
-- `2048_flutter`: 使用Flutter实现的版本
+- `2048-angular`: ![Angular](https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white) Angular框架版本
+- `2048-backbone`: ![Backbone.js](https://img.shields.io/badge/-Backbone.js-0071B5?style=flat-square&logo=backbone.js&logoColor=white) Backbone.js版本
+- `2048-canvas`: ![Canvas](https://img.shields.io/badge/-Canvas-E34F26?style=flat-square&logo=html5&logoColor=white) 原生Canvas版本
+- `2048-kotlin`: ![Kotlin](https://img.shields.io/badge/-Kotlin-0095D5?style=flat-square&logo=kotlin&logoColor=white) Kotlin版本
+- `2048-lit`: ![Lit](https://img.shields.io/badge/-Lit-324FFF?style=flat-square&logo=lit&logoColor=white) Lit框架版本
+- `2048-preact`: ![Preact](https://img.shields.io/badge/-Preact-673AB8?style=flat-square&logo=preact&logoColor=white) Preact框架版本
+- `2048-pyscript`: ![PyScript](https://img.shields.io/badge/-PyScript-3776AB?style=flat-square&logo=python&logoColor=white) PyScript版本
+- `2048-qwik`: ![Qwik](https://img.shields.io/badge/-Qwik-FF1E54?style=flat-square&logo=qwik&logoColor=white) Qwik框架版本
+- `2048-react`: ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) React框架版本
+- `2048-solid`: ![Solid](https://img.shields.io/badge/-Solid-2C4F7C?style=flat-square&logo=solid&logoColor=white) Solid.js版本
+- `2048-svelte`: ![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white) Svelte框架版本
+- `2048-vanilla`: ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) 原生JavaScript版本
+- `2048-webgl`: ![WebGL](https://img.shields.io/badge/-WebGL-990000?style=flat-square&logo=webgl&logoColor=white) WebGL版本
+- `2048_flutter`: ![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white) Flutter版本
 
 ## 游戏规则
 
-2048是一个简单的数字游戏：
+1. 4x4格子上滑动数字块
+2. 相同数字的块合并
+3. 每次移动后随机出现2或4
+4. 无法移动时游戏结束
+5. 出现2048时获胜（可继续）
 
-1. 在4x4的格子上滑动数字块
-2. 相同数字的块相撞时会合并成为它们的和
-3. 每次移动后会在空白处随机出现一个2或4
-4. 当无法移动时游戏结束
-5. 当出现2048时获得胜利（但可以继续游戏）
+## 运行说明
 
-## 如何运行
-
-每个子项目都有其独立的运行说明，请查看各个项目文件夹中的说明文档。
+请查看各子项目文件夹中的说明文档。
 
 ## 技术特点
 
-这个项目展示了：
-- 不同前端框架的特点和使用方法
-- 游戏逻辑的不同实现方式
-- 响应式设计和触摸支持
-- 状态管理的多种方案
+- 展示各前端框架特性
+- 多种游戏逻辑实现
+- 响应式设计与触摸支持
+- 多样化状态管理方案
 
-## 贡献
-
-欢迎提交Pull Request来改进代码或添加新的框架实现！
-
-## 许可证
-
-MIT License
-
-# 2048游戏
-
-一个使用现代Web技术构建的2048游戏。
-
-## 项目简介
-
-2048是一个经典的数字滑块游戏，玩家通过上下左右移动方块，将相同数字的方块合并，最终目标是得到2048这个数字。
-
-## 功能特点
-
-- 响应式设计，支持多种设备
-- 流畅的动画效果
-- 得分统计
-- 最高分记录
-- 游戏状态保存
-
-## 技术栈
-
-- HTML5
-- CSS3
-- JavaScript
-- 现代前端框架
-
-## 如何运行
-
-1. 克隆仓库
-```bash
-git clone [你的仓库URL]
-```
-
-2. 打开游戏
-```bash
-cd 2048
-# 使用浏览器打开index.html
-```
-
-## 游戏规则
-
-1. 使用方向键（↑↓←→）或滑动操作移动方块
-2. 相同数字的方块相撞时会合并为它们的和
-3. 每次移动后会在空白处随机出现一个2或4
-4. 当无法移动时游戏结束
-5. 当出现2048时获得胜利
-
-## 开发计划
-
-- [ ] 基础游戏功能实现
-- [ ] 添加动画效果
-- [ ] 实现得分系统
-- [ ] 添加本地存储功能
-- [ ] 优化移动端体验
-
-## 贡献指南
-
-欢迎提交Pull Request或Issue来帮助改进这个项目。
 
 ## 许可证
 
