@@ -1,0 +1,26 @@
+{
+  "version": "9",
+  "items": {
+    "0cb0e61e081d92e66b0158327b9feb42": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/1.8.20/a107ac66653b98eb0d70f6b328e08bd86dbe4f57/kotlin-stdlib-js-1.8.20.jar",
+      "target": "kotlin/1.8.20"
+    },
+    "45cba01ede1209c6153b901ca47c4037": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.9.10/dafaf2c27f27c09220cee312df10917d9a5d97ce/kotlin-stdlib-common-1.9.10.jar"
+    },
+    "123390462a033710a61e9816ee50b979": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-extensions/1.0.1-pre.632/5d761a7657caf62d1e845345c7a70880d9fae928/kotlin-extensions-1.0.1-pre.632.jar"
+    },
+    "a01d9de128f813c4be2cdba971d2604b": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-html-js/0.8.0/11c28def1871308c9582782e634a4365f518f8aa/kotlinx-html-jsir-0.8.0.klib"
+    },
+    "c2333d59b79d740ca5a47eebc6cad6ee": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js-runner/1.8.20/9c1cc1e463b26db301da6b9616a10c6c9f227eb7/kotlin-test-js-runner-1.8.20.jar",
+      "target": "kotlin-test-js-runner/0.0.1"
+    },
+    "b7b6af6a91fcb1554403bf10fdb76e3e": {
+      "src": "/Users/dengwenyu/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js/1.8.20/753834497ccd03e084461e81432a89307911cecd/kotlin-test-js-1.8.20.jar",
+      "target": "kotlin-test/1.8.20"
+    }
+  }
+}

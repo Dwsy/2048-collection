@@ -1,0 +1,19 @@
+{
+  "name": "2048-backbone",
+  "version": "1.0.0",
+  "description": "2048 game implemented with Backbone.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "backbone": "^1.5.0",
+    "jquery": "^3.7.1",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

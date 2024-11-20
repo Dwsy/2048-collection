@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf8ef;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header {
+    width: min(400px, 100%);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: bold;
+    color: #776e65;
+}
+
+.info {
+    text-align: right;
+}
+
+.score {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: bold;
+    color: #776e65;
+    margin-bottom: 0.5rem;
+}
+
+.restart-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #8f7a66;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.restart-button:hover {
+    background-color: #7f6a56;
+}
+
+.game-board {
+    width: min(400px, 95vw);
+    height: min(400px, 95vw);
+    padding: 1rem;
+    background-color: #bbada0;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-grid {
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background-color: #bbada0;
+}
+
+.tile-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-color: rgba(238, 228, 218, 0.35);
+    border-radius: 0.25rem;
+}
+
+.tile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    transition: background-color 0.15s ease-in-out;
+    font-weight: 900;
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+/* 数字块样式 */
+.tile-2 {
+    background-color: #eee4da;
+    color: #776e65;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tile-4 {
+    background-color: #ede0c8;
+    color: #776e65;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tile-8 {
+    background-color: #f2b179;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-16 {
+    background-color: #f59563;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-32 {
+    background-color: #f67c5f;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-64 {
+    background-color: #f65e3b;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-128 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+}
+
+.tile-256 {
+    background-color: #edcc61;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+}
+
+.tile-512 {
+    background-color: #edc850;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+}
+
+.tile-1024 {
+    background-color: #edc53f;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.tile-2048 {
+    background-color: #edc22e;
+    color: #f9f6f2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* 动画 */
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes merge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop-in {
+    animation: pop-in 0.3s ease-in-out;
+}
+
+.merged {
+    animation: merge 0.4s ease-in-out;
+}
+
+.game-over {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f65e3b;
+}

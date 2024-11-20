@@ -1,0 +1,92 @@
+.game-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: #bbada0;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 20px 0;
+  touch-action: none;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background-color: rgba(238, 228, 218, 0.35);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  background-color: #eee4da;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  transition: all 0.15s ease-in-out;
+}
+
+.tile-2 { background-color: #eee4da; }
+.tile-4 { background-color: #ede0c8; }
+.tile-8 { background-color: #f2b179; color: #f9f6f2; }
+.tile-16 { background-color: #f59563; color: #f9f6f2; }
+.tile-32 { background-color: #f67c5f; color: #f9f6f2; }
+.tile-64 { background-color: #f65e3b; color: #f9f6f2; }
+.tile-128 { background-color: #edcf72; color: #f9f6f2; font-size: 2rem; }
+.tile-256 { background-color: #edcc61; color: #f9f6f2; font-size: 2rem; }
+.tile-512 { background-color: #edc850; color: #f9f6f2; font-size: 2rem; }
+.tile-1024 { background-color: #edc53f; color: #f9f6f2; font-size: 1.8rem; }
+.tile-2048 { background-color: #edc22e; color: #f9f6f2; font-size: 1.8rem; }
+
+.score {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(238, 228, 218, 0.73);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.new-game-button {
+  background-color: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.new-game-button:hover {
+  background-color: #7f6a56;
+}

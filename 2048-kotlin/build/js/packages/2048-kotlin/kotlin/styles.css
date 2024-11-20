@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #faf8ef;
+}
+
+#app {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #776e65;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.score {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #776e65;
+}
+
+#game-canvas {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #bbada0;
+    border-radius: 6px;
+    touch-action: none;
+}
+
+#new-game-button {
+    background-color: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#new-game-button:hover {
+    background-color: #7f6a56;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(238, 228, 218, 0.73);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.game-over h2 {
+    color: #776e65;
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "2048-canvas",
+  "version": "1.0.0",
+  "description": "2048 game implemented with Canvas 2D",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+builtins_platform=JS
+unique_name=org.example\:2048-kotlin
+compiler_version=1.8.20
+depends=org.jetbrains.kotlinx\:kotlinx-html kotlin
+serializedKlibFingerprint=w9912j5hqcd2.2w1qxhymjo469
+serializedIrFileFingerprints=SerializedIrFileFingerprint(fileFingerprint\=3dypnlwiqkxla.3ojgrc8q927p8)
+jsOutputName=2048-kotlin
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

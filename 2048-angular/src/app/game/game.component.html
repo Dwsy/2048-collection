@@ -1,0 +1,39 @@
+<div class="game">
+  <div class="header">
+    <h1 class="title">2048</h1>
+    <div class="scores">
+      <div class="score">
+        <div class="score-label">SCORE</div>
+        <div class="score-value">{{ score }}</div>
+      </div>
+      <div class="score">
+        <div class="score-label">BEST</div>
+        <div class="score-value">{{ bestScore }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="grid"
+    (touchstart)="handleTouchStart($event)"
+    (touchend)="handleTouchEnd($event)"
+  >
+    <div *ngFor="let row of [0, 1, 2, 3]">
+      <div *ngFor="let col of [0, 1, 2, 3]" class="cell"></div>
+    </div>
+    <div
+      *ngFor="let tile of tiles"
+      class="tile"
+      [attr.data-value]="tile.value"
+      [style.transform]="'translate(' + (tile.y * 115 + 15) + 'px, ' + (tile.x * 115 + 15) + 'px)'"
+    >
+      {{ tile.value }}
+    </div>
+    <div *ngIf="gameOver" class="game-over">
+      <div class="game-over-text">Game Over!</div>
+      <button class="retry-button" (click)="initializeGame()">
+        Try Again
+      </button>
+    </div>
+  </div>
+</div>

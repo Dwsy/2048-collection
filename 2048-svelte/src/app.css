@@ -1,0 +1,212 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* 数字块样式 */
+.tile-2 {
+  background-color: #eee4da !important;
+  color: #776e65 !important;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tile-4 {
+  background-color: #ede0c8 !important;
+  color: #776e65 !important;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tile-8 {
+  background-color: #f2b179 !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-16 {
+  background-color: #f59563 !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-32 {
+  background-color: #f67c5f !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-64 {
+  background-color: #f65e3b !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tile-128 {
+  background-color: #edcf72 !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+  font-size: 45px;
+}
+
+.tile-256 {
+  background-color: #edcc61 !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+  font-size: 45px;
+}
+
+.tile-512 {
+  background-color: #edc850 !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+  font-size: 45px;
+}
+
+.tile-1024 {
+  background-color: #edc53f !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+  font-size: 35px;
+}
+
+.tile-2048 {
+  background-color: #edc22e !important;
+  color: #f9f6f2 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  font-size: 35px;
+}
+
+/* 自定义动画关键帧 */
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes merge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s ease-in-out;
+}
+
+.animate-merge {
+  animation: merge 0.4s ease-in-out;
+}
+
+.game-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+  transition: all 0.2s ease-in-out;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: #3a3d41;
+}
