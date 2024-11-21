@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    background: #faf8ef;
+    color: #776e65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: min(500px, 95vw);
+    padding: 1rem;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.scores-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.score, .best {
+    background: #bbada0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.game-board {
+    background: #bbada0;
+    padding: 15px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    background: #bbada0;
+}
+
+.grid-row {
+    display: contents;
+}
+
+.grid-cell {
+    background: rgba(238, 228, 218, 0.35);
+    aspect-ratio: 1;
+    border-radius: 3px;
+}
+
+.tile-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.tile {
+    position: absolute;
+    width: calc((100% - 45px) / 4);
+    height: calc((100% - 45px) / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+    animation: auto-play 5s infinite;
+}
+
+/* 瓦片颜色 */
+.tile-2 {
+    background: #eee4da;
+    animation-delay: 0s;
+}
+
+.tile-4 {
+    background: #ede0c8;
+    animation-delay: 1s;
+}
+
+.tile-8 {
+    color: #f9f6f2;
+    background: #f2b179;
+    animation-delay: 2s;
+}
+
+.tile-16 {
+    color: #f9f6f2;
+    background: #f59563;
+    animation-delay: 3s;
+}
+
+.tile-32 {
+    color: #f9f6f2;
+    background: #f67c5f;
+    animation-delay: 4s;
+}
+
+/* 自动播放动画 */
+@keyframes auto-play {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(115%, 0);
+    }
+    40% {
+        transform: translate(230%, 0);
+    }
+    60% {
+        transform: translate(230%, 115%);
+    }
+    80% {
+        transform: translate(230%, 230%);
+    }
+    100% {
+        transform: translate(345%, 345%);
+    }
+}

@@ -1,31 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>2048 Game</title>
+    <title>2048 游戏</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="game-container">
-        <header class="header">
+    <div class="container">
+        <header>
             <h1>2048</h1>
-            <div class="info">
-                <div class="score">Score: <span id="score">0</span></div>
-                <button class="restart-button">New Game</button>
+            <div class="score-container">
+                <div class="score-label">分数</div>
+                <div id="score">0</div>
             </div>
         </header>
 
-        <div class="game-board">
-            <div class="game-grid">
-                <!-- Game tiles will be dynamically generated here -->
+        <div class="controls">
+            <button id="new-game">新游戏</button>
+            <button id="settings-btn">设置</button>
+            <button id="theme-btn">主题</button>
+            <button id="ai-btn">AI 模式</button>
+        </div>
+
+        <div id="game-container">
+            <div id="game-grid"></div>
+        </div>
+
+        <div id="game-over" style="display: none;">
+            <div class="game-over-content">
+                <h2>游戏结束!</h2>
+                <button id="restart-btn">重新开始</button>
             </div>
         </div>
 
-        <div id="game-over" class="game-over" style="display: none;">
-            游戏结束！
+        <div id="settings-overlay" style="display: none;"></div>
+        <div id="settings-panel" style="display: none;">
+            <h2>游戏设置</h2>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="grid-size">网格大小:</label>
+                    <select id="grid-size">
+                        <option value="3">3x3</option>
+                        <option value="4" selected>4x4</option>
+                        <option value="5">5x5</option>
+                        <option value="6">6x6</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="theme-select">主题:</label>
+                    <select id="theme-select">
+                        <option value="default">默认</option>
+                        <option value="dark">深色</option>
+                        <option value="colorful">彩色</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="ai-algorithm">AI 算法:</label>
+                    <select id="ai-algorithm">
+                        <option value="minimax">极小化极大</option>
+                        <option value="expectimax">期望最大值</option>
+                        <option value="montecarlo">蒙特卡洛树搜索</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="ai-delay">AI 延迟 (ms):</label>
+                    <input type="number" id="ai-delay" value="200" min="50" max="1000" step="50">
+                </div>
+            </div>
+            <div class="settings-buttons">
+                <button id="settings-save">保存</button>
+                <button id="settings-cancel">取消</button>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 from js import document, window, requestAnimationFrame, performance
 import random
 import math
+from pyodide.ffi import create_proxy
 
 class Game:
     def __init__(self):
@@ -13,6 +14,14 @@ class Game:
         self.animating = False
         self.animations = []
 
+        # Create proxies for event handlers
+        self.handle_key_down_proxy = create_proxy(self.handle_key_down)
+        self.handle_resize_proxy = create_proxy(self.handle_resize)
+        self.handle_touch_start_proxy = create_proxy(self.handle_touch_start)
+        self.handle_touch_end_proxy = create_proxy(self.handle_touch_end)
+        self.init_game_proxy = create_proxy(self.init_game)
+        self.animate_proxy = create_proxy(self.animate)
+
         # Set canvas size
         self.handle_resize()
 
@@ -20,14 +29,14 @@ class Game:
         self.init_game()
 
         # Event listeners
-        window.addEventListener('keydown', self.handle_key_down)
-        window.addEventListener('resize', self.handle_resize)
-        self.canvas.addEventListener('touchstart', self.handle_touch_start)
-        self.canvas.addEventListener('touchend', self.handle_touch_end)
-        document.getElementById('new-game-button').addEventListener('click', lambda e: self.init_game())
+        window.addEventListener('keydown', self.handle_key_down_proxy)
+        window.addEventListener('resize', self.handle_resize_proxy)
+        self.canvas.addEventListener('touchstart', self.handle_touch_start_proxy)
+        self.canvas.addEventListener('touchend', self.handle_touch_end_proxy)
+        document.getElementById('new-game-button').addEventListener('click', self.init_game_proxy)
 
         # Start animation loop
-        self.animate()
+        requestAnimationFrame(self.animate_proxy)
 
     def handle_resize(self, event=None):
         width = self.canvas.clientWidth
@@ -207,7 +216,7 @@ class Game:
                 self.animating = False
                 self.check_game_over()
 
-            window.setTimeout(after_move, 150)
+            window.setTimeout(create_proxy(after_move), 150)
 
     def check_game_over(self):
         if len(self.tiles) < 16:
@@ -219,13 +228,16 @@ class Game:
                 if tile:
                     value = tile['value']
                     # Check adjacent cells
-                    if (
-                        (row > 0 and next((t for t in self.tiles if t['row'] == row - 1 and t['col'] == col), None)?.get('value') == value) or
-                        (row < 3 and next((t for t in self.tiles if t['row'] == row + 1 and t['col'] == col), None)?.get('value') == value) or
-                        (col > 0 and next((t for t in self.tiles if t['row'] == row and t['col'] == col - 1), None)?.get('value') == value) or
-                        (col < 3 and next((t for t in self.tiles if t['row'] == row and t['col'] == col + 1), None)?.get('value') == value)
-                    ):
-                        return
+                    adjacent_tiles = [
+                        next((t for t in self.tiles if t['row'] == row - 1 and t['col'] == col), None) if row > 0 else None,
+                        next((t for t in self.tiles if t['row'] == row + 1 and t['col'] == col), None) if row < 3 else None,
+                        next((t for t in self.tiles if t['row'] == row and t['col'] == col - 1), None) if col > 0 else None,
+                        next((t for t in self.tiles if t['row'] == row and t['col'] == col + 1), None) if col < 3 else None
+                    ]
+                    
+                    for adj_tile in adjacent_tiles:
+                        if adj_tile is not None and adj_tile.get('value') == value:
+                            return
 
         self.game_over = True
         self.show_game_over()
@@ -238,7 +250,7 @@ class Game:
             <button id="new-game-button">Try Again</button>
         '''
         document.querySelector('.game-container').appendChild(game_over)
-        game_over.querySelector('button').addEventListener('click', lambda e: self.init_game())
+        game_over.querySelector('button').addEventListener('click', create_proxy(self.init_game))
 
     def handle_key_down(self, event):
         key_map = {
@@ -275,7 +287,7 @@ class Game:
 
     def animate(self, timestamp=None):
         self.render()
-        requestAnimationFrame(self.animate)
+        requestAnimationFrame(self.animate_proxy)
 
     def render(self):
         now = performance.now()
